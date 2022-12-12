@@ -70,7 +70,7 @@ string Customer::getPhoneNumber() {
 }
 
 void Customer::printCustomer() {
-	cout << firstName << " " << lastName << " " << accountNumber << " " << houseNumber << " " << streetName << " " << streetType << " " << city << " " << state << " " << zipCode << " " << phoneNumber;
+	cout << firstName << " " << lastName << " " << accountNumber << " " << houseNumber << " " << streetName << " " << streetType << " " << city << " " << state << " " << zipCode << " " << phoneNumber << endl;
 }
 
 void Customer::operator=(Customer dude) {

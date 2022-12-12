@@ -130,6 +130,8 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Customer.cpp" />
     <ClCompile Include="AllCustomers.cpp" />
+    <ClCompile Include="Purchase.cpp" />
+    <ClCompile Include="AllPurchases.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="customers.txt" />
@@ -138,6 +140,8 @@
   <ItemGroup>
     <ClInclude Include="Customer.h" />
     <ClInclude Include="AllCustomers.h" />
+    <ClInclude Include="Purchase.h" />
+    <ClInclude Include="AllPurchases.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

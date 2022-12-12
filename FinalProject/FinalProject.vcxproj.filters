@@ -24,6 +24,12 @@
     <ClCompile Include="AllCustomers.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Purchase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AllPurchases.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="customers.txt">
@@ -38,6 +44,12 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="AllCustomers.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Purchase.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AllPurchases.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

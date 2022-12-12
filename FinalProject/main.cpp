@@ -1,19 +1,21 @@
 #include "Customer.h"
 #include "AllCustomers.h"
 #include "Purchase.h"
+#include "AllPurchases.h"
 using namespace std;
 
 int main() {
 
 	vector<Customer> customers; //AllCustomers
+	vector<Purchase> purchases; //AllPurchases
 
 	ifstream customerFile("customers.txt");
 	ifstream purchaseFile("purchases.txt");
 
-	string tempFirstName, tempLastName, tempStreetName, tempStreetType, tempCity, tempState, tempPhoneNumber;
-	int tempAccountNumber, tempZipCode, tempHouseNumber, userinput;
-	double tempPrice, tempPrice2, tempPrice3, tempPrice4;
+	string tempFirstName, tempLastName, tempStreetName, tempStreetType, tempCity, tempState, tempPhoneNumber, tempItem, tempDate, tempTotal;
+	int tempAccountNumber, tempZipCode, tempHouseNumber, tempAccountNumberp, userinput;
 	AllCustomers CustomersList;
+	AllPurchases PurchasesList;
 
 	while (customerFile >> tempFirstName >> tempLastName >> tempAccountNumber >> tempHouseNumber >> tempStreetName >> tempStreetType >> tempCity >> tempState >> tempZipCode >> tempPhoneNumber) {
 
@@ -29,12 +31,27 @@ int main() {
 		CustomersList.addCustomerVector(customers.at(i));
 	}
 
+	while (purchaseFile >> tempAccountNumberp >> tempItem >> tempDate >> tempTotal) {
+
+		Purchase purchase(tempAccountNumberp, tempItem, tempDate, tempTotal);
+
+		purchases.push_back(purchase);
+
+	}
+
+	purchaseFile.close();
+
+	for (int i = 0; i < purchases.size(); i++) {
+		PurchasesList.addPurchaseVector(purchases.at(i));
+	}
+
 	do {
+		cout << "Brian's Video Game Store" << endl;
 		cout << "Enter the number for what you'd like to do:" << endl;
 		cout << "1. View all customers" << endl;
 		cout << "2. View a specific customer" << endl;
 		cout << "3. View customers in ascending order" << endl;
-		cout << "4. View a customer's total" << endl;
+		cout << "4. View a customers total" << endl;
 		cout << "5. Add a customer" << endl;
 		cout << "6. Add multiple customers" << endl;
 		cout << "7. Add a new customer purchase" << endl;
@@ -72,6 +89,8 @@ int main() {
 
 			cin >> userinput2;
 
+			cout << endl;
+
 			CustomersList.getSpecificCustomer(userinput2).printCustomer();
 
 			cout << endl;
@@ -82,8 +101,25 @@ int main() {
 			CustomersList.sortCustomerList();
 
 			CustomersList.printCustomerList();
+			
+			break;
+
+		case 4:
+			int userinput3;
+
+			cout << "Which customer?" << endl;
+
+			CustomersList.printCustomerListNumber();
+
+			cin >> userinput3;
+
+			cout << endl;
+
+			PurchasesList.getSpecificPurchaseTotal(userinput3);
 
 		}
+
+		
 
 
 	} while (userinput > 0 && userinput <= 11);
