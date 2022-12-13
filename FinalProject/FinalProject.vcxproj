@@ -136,6 +136,8 @@
   <ItemGroup>
     <Text Include="customers.txt" />
     <Text Include="purchases.txt" />
+    <Text Include="newcustomers.txt" />
+    <Text Include="newpurchases.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Customer.h" />

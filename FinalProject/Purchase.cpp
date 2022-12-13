@@ -1,7 +1,7 @@
 #include "Purchase.h"
 using namespace std;
 
-Purchase::Purchase(int accountNumber, string item, string date, string total) {
+Purchase::Purchase(int accountNumber, string item, string date, string total) {   //constructor
 
 	this->accountNumber = accountNumber;
 	this->item = item;
@@ -29,12 +29,14 @@ Purchase::Purchase(int accountNumber, string item, string date, string total) {
 	 return total;
  }
 
+ void Purchase::outputPurchase(ofstream& purchaseOutputFile) { //function to output customer info to a file
+
+	 purchaseOutputFile << accountNumber << " " << item << " " << date << " " << total << endl;
+
+	 cout << "Data exported to newpurchases.txt" << endl;
+ }
+
  void Purchase::printPurchase() {
 
 	 cout << accountNumber << " " << item << " " << date << " " << total << endl;
- }
-
- void Purchase::printTotal() {
-
-	 cout << total << endl;
  }

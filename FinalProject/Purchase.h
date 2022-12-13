@@ -2,6 +2,7 @@
 #define PURCHASE_H
 #include <iostream>
 #include <string>
+#include <fstream>
 using namespace std;
 
 class Purchase {
@@ -11,13 +12,13 @@ private:
 	int accountNumber;
 
 public:
-	Purchase(int accountNumber, string item, string date, string total);
+	Purchase(int accountNumber, string item, string date, string total);  //constructor
 	int getAccountNumberp();
 	string getItem();
 	string getDate();
 	string getTotal();
 	void printPurchase();
-	void printTotal();
+	void outputPurchase(ofstream& purchaseOutputFile);  //function to output purchases
 };
 
 #endif

@@ -38,6 +38,12 @@
     <Text Include="purchases.txt">
       <Filter>Source Files</Filter>
     </Text>
+    <Text Include="newcustomers.txt">
+      <Filter>Source Files</Filter>
+    </Text>
+    <Text Include="newpurchases.txt">
+      <Filter>Source Files</Filter>
+    </Text>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Customer.h">
